@@ -2,7 +2,6 @@ package com.example.demologaop.test;
 
 
 import com.example.demologaop.annotation.MyAnnotation;
-import com.fasterxml.jackson.databind.introspect.Annotated;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
