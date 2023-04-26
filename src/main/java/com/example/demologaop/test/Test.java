@@ -2,6 +2,7 @@ package com.example.demologaop.test;
 
 
 import com.example.demologaop.annotation.MyAnnotation;
+import com.example.demologaop.controller.UserController;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
@@ -11,7 +12,7 @@ public class Test {
      * 利用反射获取注解及信息
      * @param args
      */
-    public static void main(String[] args){
+    public static void main(String[] args) throws NoSuchMethodException {
 
         try {
             //获取class对象
@@ -38,6 +39,16 @@ public class Test {
         } catch (NoSuchMethodException e) {
             throw new RuntimeException(e);
         }
+
+        Class<UserController> clazz = UserController.class;
+        Method hello = clazz.getMethod("get");
+        MyAnnotation annotation = hello.getAnnotation(MyAnnotation.class);
+        System.out.println("name: "+annotation.name()
+                + " age: "+annotation.age() + " sex: "+annotation.sex()
+                + " hobby: " + annotation.hobby()[0]
+        );
+
+
 
     }
 
