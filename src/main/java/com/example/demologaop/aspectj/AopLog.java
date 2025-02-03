@@ -46,7 +46,10 @@ public class AopLog {
     public Object aroundAdvice(ProceedingJoinPoint point){
         //从RequestContextHolder中获取request对象
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
-        HttpServletRequest request = Objects.requireNonNull(attributes).getRequest();
+        HttpServletRequest request = null;
+        if (attributes != null) {
+            request = attributes.getRequest();
+        }
 
         long startTime = System.currentTimeMillis();
         try {
