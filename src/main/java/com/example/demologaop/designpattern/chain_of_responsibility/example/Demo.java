@@ -10,8 +10,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+/**
+ * 本例展示了包含用户数据的请求如何依次通过处理者链来执行各种不同的行为 （例如认证、 授权与验证）
+ */
 public class Demo {
-    private static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    private static final BufferedReader READER = new BufferedReader(new InputStreamReader(System.in));
     private static Server server;
 
     private static void init() {
@@ -35,9 +38,9 @@ public class Demo {
         boolean success = false;
         do {
             System.out.print("Enter email: ");
-            String email = reader.readLine();
+            String email = READER.readLine();
             System.out.print("Input password: ");
-            String password = reader.readLine();
+            String password = READER.readLine();
             success = server.logIn(email, password);
 
         } while (!success);
