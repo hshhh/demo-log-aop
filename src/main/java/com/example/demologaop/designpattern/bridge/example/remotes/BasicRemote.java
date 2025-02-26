@@ -2,7 +2,7 @@ package com.example.demologaop.designpattern.bridge.example.remotes;
 
 import com.example.demologaop.designpattern.bridge.example.devices.Device;
 
-public class BasicRemote implements Remote{
+public class BasicRemote implements Remote {
     protected Device device;
 
     public BasicRemote() {}

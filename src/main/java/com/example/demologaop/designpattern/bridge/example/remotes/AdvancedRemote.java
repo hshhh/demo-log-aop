@@ -10,6 +10,7 @@ public class AdvancedRemote extends BasicRemote{
     // 静音
     public void mute() {
         System.out.println("Remote: mute");
-        device.setVolume(0);
+        super.device.setVolume(0);
+        // device.setVolume(0);
     }
 }
