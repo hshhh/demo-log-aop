@@ -6,6 +6,11 @@ package com.example.demologaop.designpattern.chain_of_responsibility.example.mid
 public abstract class Middleware {
     private Middleware next;
 
+
+    public Middleware getNext() {
+        return this.next;
+    }
+    
     /**
      * Builds chains of middleware objects
      * 构建对象链（责任链模式核心逻辑）

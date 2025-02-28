@@ -28,7 +28,7 @@ public class ThrottlingMiddleware extends Middleware{
         request++;
 
         if (request > requestPerMinute) {
-            System.out.println("超出请求最大次数，提前返回，当前请求次数 = " + request);
+            System.out.println("超出请求最大次数，请稍候再试，当前请求次数 = " + request);
             // 阻断请求传递
             return false;
             //Thread.currentThread().interrupt();
