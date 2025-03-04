@@ -45,14 +45,14 @@ public class PayByPayPal implements PayStrategy{
     public void collectPaymentDetails() {
         try {
             while(!signedId) {
-                System.out.println("Enter the user's email: ");
+                System.out.print("Enter the user's email: ");
                 email = READER.readLine();
-                System.out.println("Enter the password: ");
+                System.out.print("Enter the password: ");
                 password = READER.readLine();
                 if (verify()) {
-                    System.out.println("Data verification has been successful.");
+                    System.out.print("Data verification has been successful.");
                 } else {
-                    System.out.println("Wrong email or password!");
+                    System.out.print("Wrong email or password!");
                 }
             }
         } catch (IOException e) {

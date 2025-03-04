@@ -1,5 +1,8 @@
 package com.example.demologaop.designpattern.strategy.example.strategies;
 
+/**
+ * 信用卡类
+ */
 public class CreditCard {
     private int amount;
     private String number;
