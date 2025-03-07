@@ -8,10 +8,16 @@ public class Demo {
 
     public static void main(String[] args) {
         Editor editor = new Editor();
+        LogOpenListener logOpenListener = new LogOpenListener("/path/to/log/file.txt");
+        EmailNotificationListener emailNotificationListener = new EmailNotificationListener("admin@example.com");
         editor.events.subscribe("open",
-                new LogOpenListener("/path/to/log/file.txt"));
+                logOpenListener);
         editor.events.subscribe("save",
-                new EmailNotificationListener("admin@example.com"));
+                logOpenListener);
+        editor.events.subscribe("open",
+                emailNotificationListener);
+        editor.events.subscribe("save",
+                emailNotificationListener);
 
         try {
             editor.openFile("test.txt");
